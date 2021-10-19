@@ -1,0 +1,70 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Liveability index of capital cities by year",
+  "width": 600,
+  "height": 350,
+  "description": "Liveability index across years.",
+  "data": { "url": "line_chart.csv" },
+  "mark": {
+    "type": "line",
+    "point": true
+  },
+
+  "params": [
+    {
+      "name": "city_highlight",
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "Adelaide",
+          "Melbourne",
+          "Perth",
+          "Brisbane",
+          "Sydney"
+        ],
+        "labels": [
+          "Show all",
+          "Adelaide",
+          "Melbourne",
+          "Perth",
+          "Brisbane",
+          "Sydney"
+        ],
+        "name": "Select a city: "
+      }
+    }
+  ],
+  "transform": [
+    {
+      "filter": "datum.City == city_highlight || city_highlight == null"
+    }
+  ],
+  "encoding": {
+    "x": {
+      "field": "Year",
+      "title": "Year",
+      "axis": { "tickSize": 1 }
+    },
+    "y": {
+      "aggregate": "mean",
+      "field": "Liveability index",
+      "type": "quantitative",
+      "title": "Liveability index",
+      "scale": { "domain": [90, 100] }
+    },
+    "color": {
+      "field": "City",
+      "type": "nominal",
+      "scale": {
+        "domain": ["Adelaide", "Melbourne", "Perth", "Brisbane", "Sydney"],
+        "range": ["#e41a1c", "#984ea3", "#ff7f00", "#a6cee3", "#377eb8"]
+      }
+    },
+    "tooltip": [
+      { "field": "City", "type": "ordinal" },
+      { "field": "Liveability index", "type": "quantitative" }
+    ],
+    "opacity": { "value": 0.9 }
+  }
+}

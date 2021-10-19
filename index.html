@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Liveability in Australia</title>
+    <link rel="stylesheet" href="layout.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/purecss@2.0.6/build/pure-min.css"
+      integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css"
+    />
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+    <script src="pos_barchart_vis.js"></script>
+    <script src="neg_barchart_vis.js"></script>
+    <script src="line_vis.js"></script>
+    <script src="map_vis.js"></script>
+  </head>
+
+  <body>
+    <h1 id="title">Liveability in Australia</h1>
+    <div>
+      <p id="p1">
+        As populations of metropolitan cities increase rapidly, living
+        conditions within those cities are more important than ever. Liveability
+        describes the frame conditions of a decent life for all citizens of the
+        city. The Economic Intelligence Unit (EIU) creates a Global Liveability
+        Index examines 140 cities worldwide and creates a ranking of their
+        liveability, by the Liveability Index. Australian cities consistently
+        rank as some of the most liveable cities. In particular Melbourne was
+        awarded the world’s most liveable city for the seventh reoccurring year
+        in 2017. What impacts this, and how is liveability in Australian
+        capitals?
+      </p>
+    </div>
+
+    <h2 id="T2">What positively impacts liveability?</h2>
+    <div class="pure-g">
+      <div class="pure-u-1-3">
+        <p id="p2">
+          The EIU considers many factors in their ranking. These factors are
+          culture, education, health care, infrastructure, and stability. In a
+          survey done by the City of Melbourne, it was found that citizens of
+          the city greatly value health care and infrastructure, similar to the
+          EIU.
+        </p>
+      </div>
+      <div class="pure-u-2-3">
+        <div id="pos_barchart"></div>
+      </div>
+    </div>
+
+    <h2 id="T3">What factors negatively impact liveability?</h2>
+    <div class="pure-g">
+      <div class="pure-u-1-3">
+        <p id="p3">
+          Many factors also decrease liveability. According to the same survey,
+          residents of Melbourne expressed that factors that decrease the
+          liveability is the high cost of living, lack of safety, pollution, and
+          weather. Notably, cost of living and lack of safety are significantly
+          more important than pollution and weather.
+        </p>
+      </div>
+      <div class="pure-u-2-3">
+        <div id="neg_barchart"></div>
+      </div>
+    </div>
+
+    <h2>Effect of the pandemic on liveability</h2>
+    <div class="pure-g">
+      <div class="pure-u-1-3">
+        <p>
+          Obviously, the pandemic has created a huge shift in living standards
+          and situations. There was a significant drop off in the Liveability
+          Index of Australian capitals as a result, with larger cities being
+          affected more.
+        </p>
+      </div>
+      <div class="pure-u-2-3">
+        <div id="line_chart"></div>
+      </div>
+    </div>
+
+    <h2>Top suburbs in Melbourne</h2>
+    <div class="pure-g">
+      <div class="pure-u-1-3">
+        <p>
+          Even with the pandemic, Melbourne suburbs are still amongst some of
+          the best places to live. PwC’s CityPulse ranks Melbourne suburbs by a
+          City Pulse Score, from 0 to 10, measuring the living conditions. As
+          seen, the eastern suburbs rank extremely high.
+        </p>
+      </div>
+      <div class="pure-u-2-3">
+        <div id="map"></div>
+        >
+      </div>
+    </div>
+  </body>
+</html>

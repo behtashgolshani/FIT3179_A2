@@ -1,0 +1,20 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 629,
+  "height": 400,
+  "title": { "text": "Factors that positively affect liveability" },
+  "data": {
+    "url": "pos_liveability.csv"
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": { "field": "Factor", "type": "nominal", "axis": { "labelAngle": 0 } },
+    "y": { "field": "% of agreeing participants", "type": "quantitative" },
+    "color": {
+      "field": "weight",
+      "type": "quantitative",
+      "title": "% Weight given by EIU ranking",
+      "scale": { "scheme": "greens" }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Factors that negatively impact liveability",
+  "width": 600,
+  "height": 350,
+  "description": "A simple bar chart with embedded data.",
+  "data": { "url": "neg_liveability.csv" },
+  "mark": "bar",
+  "encoding": {
+    "x": { "field": "Factor", "type": "nominal", "axis": { "labelAngle": 0 } },
+    "y": { "field": "% of agreeing participants", "type": "quantitative" },
+    "color": { "value": "#cc0000" }
+  }
+}

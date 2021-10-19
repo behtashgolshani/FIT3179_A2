@@ -1,0 +1,38 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Top Melbourne suburbs in liveability (2020)",
+  "width": 800,
+  "height": 600,
+  "projection": { "type": "equirectangular" },
+  "data": {
+    "url": "melbourne.json",
+    "format": { "type": "topojson", "feature": "melbourne" }
+  },
+  "transform": [
+    {
+      "lookup": "properties.name",
+      "from": {
+        "data": {
+          "url": "top_suburbs.csv"
+        },
+        "key": "Suburb",
+        "fields": ["Score"]
+      }
+    }
+  ],
+  "mark": { "type": "geoshape", "stroke": "#757575", "strokeWidth": 0.5 },
+  "encoding": {
+    "color": {
+      "field": "Score",
+      "type": "quantitative",
+      "scale": {
+        "scheme": "blues"
+      },
+      "title": "Liveability score"
+    },
+    "tooltip": [
+      { "field": "properties.name", "type": "nominal", "title": "Suburb" },
+      { "field": "Score", "type": "quantitative" }
+    ]
+  }
+}
